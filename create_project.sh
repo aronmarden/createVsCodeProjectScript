@@ -3,7 +3,7 @@
 # Function to delete a project workspace and its associated GitHub repository
 delete_project() {
     local workspace="$1"
-    local workspace_dir="~/Documents/vsCodeWorkspaces/$workspace"
+    local workspace_dir="$HOME/Documents/vsCodeWorkspaces/$workspace"
     local confirm_phrase="I understand this will delete everything in $workspace"
 
     echo "WARNING: You are about to irreversibly delete the entire directory $workspace_dir and its associated GitHub repository."
@@ -32,7 +32,7 @@ else
     read -p "What do you want to call your new project? " PROJECT_NAME
 
     # Define the directory where the project will be created
-    WORKSPACE_DIR="~/Documents/vsCodeWorkspaces/$PROJECT_NAME"
+    WORKSPACE_DIR="$HOME/Documents/vsCodeWorkspaces/$PROJECT_NAME"
 
     # Create a new directory for the workspace
     echo "Creating new workspace directory at $WORKSPACE_DIR"
