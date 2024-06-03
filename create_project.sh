@@ -44,6 +44,17 @@ else
     echo "Initializing a new Git repository in the workspace"
     git init
 
+    # Create the .gitignore file with the specified rules
+    echo "Creating .gitignore file"
+    cat <<EOL > .gitignore
+**/node_modules/
+*.ignore
+EOL
+
+    # Add .gitignore to the repository
+    git add .gitignore
+    git commit -m "Add .gitignore file"
+
     # Create a new private repository on GitHub
     echo "Creating a new private repository on GitHub named $PROJECT_NAME"
     gh repo create "$PROJECT_NAME" --private --source=. --confirm
